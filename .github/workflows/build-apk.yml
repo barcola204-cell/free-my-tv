@@ -51,3 +51,11 @@ steps:
       name: FreeMyTV-APK
       path: FreeMyTV.apk
       if-no-files-found: error
+  - name: Upload Built Artifact
+    uses: actions/upload-artifact@v4
+    with:
+          name: app-build
+          path: |
+            **/*.apk
+            **/*.zip
+            build/
