@@ -41,3 +41,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: tools/check.sh web
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: free-my-tv-apk
+          path: |
+            **/*.apk
+            app/build/outputs/apk/**/*.apk
